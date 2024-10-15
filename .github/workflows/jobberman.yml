@@ -62,4 +62,10 @@ jobs:
           APP_ID="d1psrgt1ds59n5"
           BRANCH_NAME="master"
 
-          aws amplify start-deployment --app-id $APP_ID --branch-name $BRANCH_NAME --source-url https://github.com/jesemeil/jobberMan --source-branch $BRANCH_NAME
+          # Use the correct ZIP URL for the source code
+          SOURCE_URL="https://github.com/jesemeil/jobberMan/archive/refs/heads/master.zip"
+
+          aws amplify start-deployment \
+            --app-id $APP_ID \
+            --branch-name $BRANCH_NAME \
+            --source-url $SOURCE_URL
