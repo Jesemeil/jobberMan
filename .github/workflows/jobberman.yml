@@ -57,15 +57,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Deploy to AWS Amplify
+      - name: Notify deployment (optional)
         run: |
-          APP_ID="d1psrgt1ds59n5"
-          BRANCH_NAME="master"
-
-          # Use the correct ZIP URL for the source code
-          SOURCE_URL="https://github.com/jesemeil/jobberMan/archive/refs/heads/master.zip"
-
-          aws amplify start-deployment \
-            --app-id $APP_ID \
-            --branch-name $BRANCH_NAME \
-            --source-url $SOURCE_URL
+          echo "Deployment will occur automatically on the next commit."
